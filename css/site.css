@@ -1,5 +1,5 @@
 :root {
-    --sjw-dark-color: #212121;
+    --sjw-dark-color: navy;
     --sjw-light-color: #eee;
     --sjw-primary-color: #001E43;
     --sjw-secondary-color: #ff993b;
@@ -18,7 +18,10 @@ main>.container {
     min-height: 90vh;
 }
 
-h1,
+h1 {
+    color: var(--sjw-dark-color);
+}
+
 h2,
 h3,
 h4,
@@ -58,6 +61,12 @@ h6 {
     border-color: var(--sjw-secondary-color) !important;
 }
 
+/* form background override bootstrap: added opacity 25%*/
+.bg-secondary {
+    --bs-bg-opacity: .25;
+    background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;
+}
+
 .btn-outline-primary:hover,
 .btn-outline-primary:active,
 .btn-outline-primary:focus {
@@ -78,6 +87,11 @@ h6 {
     filter: brightness(1.1) !important;
     border-color: var(--sjw-secondary-color);
 
+}
+
+thead {
+    background-color: var(--sjw-primary-color);
+    color: var(--sjw-light-color);
 }
 
 /*footer styles*/
