@@ -67,7 +67,7 @@
                         <div class="form-group">
                             <label for="numPayments" class="form-label">Payments</label>
                             <select class="form-control" id="numPayments" required>
-                                <option value="">Select # Monthly Payments . . .</option>
+                                <option value="">Select . . .</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -133,7 +133,7 @@
                         </div>
                         <div class="form-group">
                             <label for="interestRate" class="form-label">Interest Rate:</label>
-                            <input id="interestRate" type="text" class="form-control" placeholder="ex: 4" required>
+                            <input id="interestRate" type="text" class="form-control" required>
                         </div>
                         <div class="d-flex justify-content-end">
                             <button type="button" id="btnSubmit"
@@ -164,7 +164,7 @@
                         <div class="col-6">
                             <div class="d-flex justify-content-end">
                                 <!--insert total results here-->
-                                <div>
+                                <div id="results">
                                     <p id="tPrincipal">$Test</p>
                                     <p id="tInterest">$Test</p>
                                     <p id="tCost">$Test</p>
@@ -176,7 +176,7 @@
 
                 <!--  BOTTOM COL 3-->
                 <div class="col-12 mt-3">
-                    <table class="table table-striped table-hover">
+                    <table class="table table-striped table-hover" id="retData">
                         <thead>
                             <th>Month</th>
                             <th>Payment</th>
@@ -185,9 +185,9 @@
                             <th>Total Interest</th>
                             <th>Balance</th>
                         </thead>
-                        <tBody>
+                        <tbody id="retDataDisplay">
 
-                        </tBody>
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -230,6 +230,16 @@
             <!--container close tag-->
         </div>
     </footer>
+    <!--TEMPLATE FOR DISPLAY TABLE-->
+    <template id="returnData-template">
+        <tr>
+            <td data-id="month"></td>
+            <td data-id="payment"></td>
+            <td data-id="principal"></td>
+            <td data-id="interest"></td>
+            <td data-id="totalInterest"></td>
+        </tr>
+    </template>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
