@@ -4,15 +4,15 @@ function getValues() {
     let numPayments = document.getElementById("numPayments").value;
     let interestRate = document.getElementById("interestRate").value;
     //convert interestRate to %
-    let term = interestRate / 100;
+
     //VAIDATION:
     //Parse for numbers(inputs)
     tPrincipal = parseInt(tPrincipal);
     numPayments = parseInt(numPayments);
-    term = parseFloat(term);
-    //convert strings to integers
-    if (Number.isInteger(tPrincipal) && Number.isInteger(numPayments) && Number.isInteger(term)) {
-        let lcArray = generatePayments(tPrincipal, numPayments, term)
+    interestRate = parseInt(interestRate);
+    //convert strings to integers  
+    if (Number.isInteger(tPrincipal) && Number.isInteger(numPayments) && Number.isInteger(interestRate)) {
+        let lcArray = generatePayments(tPrincipal, numPayments, interestRate);
         //Call displayData & write values to the DOM;
         displayData(lcArray);
     } else {
@@ -25,10 +25,12 @@ function getValues() {
 }
 //LOGIC: 
 //Generate an array of payment objects:
-function generatePayments(tPrincipal, numPayments, term) {
+function generatePayments(tPrincipal, numPayments, interestRate) {
 
     let paymentsArray = [];
     let paymentobj = {};
+
+    let term = interestRate / 100;
 
     //generating months to the object
     let months = [];
@@ -41,8 +43,10 @@ function generatePayments(tPrincipal, numPayments, term) {
 
     //COL 2 (RIGHT) DATA
     //Calculate Monthly Payments
-    monthPayment = tPrincipal * (term / 1200) / Math.pow(1 - (1 + term / 1200), months);
-    paymentobj.push(monthPayment);
+    for (let i = monthPayment; i <= paymentsArray.length; i++) {
+        monthPayment = tPrincipal * (term / 1200) / Math.pow(1 - (1 + term / 1200), months);
+        paymentobj.push(monthPayment);
+    }
     paymentsArray.push(paymentobj);
 
     //Calculate Total interest
@@ -52,12 +56,10 @@ function generatePayments(tPrincipal, numPayments, term) {
 
     //Calculate Total loan cost
     let tCost = tPrincipal + tInterest;
-
-    /* for (let i = 1; i <= paymentsArray.length; i++) {
-
-     }*/
-
-
+    let PrevBal = 0;
+    let remainingBal = PrevBal - principalPayment;
+    let interestPayment = remainingBal * (term / 1200);
+    let principalPayment = monthPayment - interestPayment;
 
 
 }
