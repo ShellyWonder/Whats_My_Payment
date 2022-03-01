@@ -2,7 +2,8 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>Loan Calculator: A Coding Project by SJ Wonder</title>
+    <!--PLACEHOLDER TEXT (CHANGE)-->
+    <title>WHAT'S MY PAYMENT?: A Coding Project by SJ Wonder</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -12,10 +13,9 @@
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
     <!--using font awesome-->
     <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
-    <!--ADOBE FONTS LINK-->
-    <link rel="stylesheet" href="https://use.typekit.net/fpx4nfn.css" />
     <link href="css/site.css" rel="stylesheet" />
     <link rel="icon" type="img/png" href="img/favicon/favicon-32x32.png" />
+    <!--add ADOBE FONTS LINK HERE-->
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -23,7 +23,7 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand logoFont" href="#"><img src="img/logoMarkWhite.png" class="p-1" width="30"
-                    height="39" />LOAN CALCULATOR</a>
+                    height="39" />WHAT'S MY PAYMENT?</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -31,7 +31,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link " href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/app.html">The App</a>
@@ -40,10 +40,11 @@
                         <a class="nav-link" href="/code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="https://github.com/ShellyWonder">Git Repo</a>
+                        <a class="nav-link" target="_blank" href="https://github.com/ShellyWonder/loan_calc2022">Git
+                            Repo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="/contact.html">Contact</a>
+                        <a class="nav-link" target="_blank" href="http://www.wonderwebdev.com/#contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -54,7 +55,7 @@
 
         <div class="container px-4 py-5 mt-5">
             <div class="row">
-                <h1>Loan Calculator</h1>
+                <h1>WHAT'S MY PAYMENT?</h1>
 
                 <!--COL 1 LOAN CALC-->
                 <div class="col-12 col-md-6 bg-secondary shadow-sm p-3 mb-5 bg-body rounded">
@@ -157,9 +158,11 @@
                     </div>
                     <div class="row p-5">
                         <div class="col-6">
+                            <div id= "userResults">
                             <p>Total Principal:</p>
                             <p>Total Interest:</p>
                             <p>Total Cost:</p>
+                           </div>
                         </div>
                         <div class="col-6">
                             <div class="d-flex justify-content-end">
@@ -199,30 +202,32 @@
             <div class="row row-cols-1 row-cols-lg-3 gy-2">
                 <div class="col order-last order-lg-first text-light">
                     <div>
-                        <span class="text-muted">&copy;2021</span>&nbsp;SJ Wonder |
+                        <span class="text-muted">&copy;2022</span>&nbsp;SJ Wonder |
                         <a href="mailto:shelly@wonderwebdev.com"> shelly@wonderwebdev.com</a>
                     </div>
                 </div>
                 <div class="
-              col
-              d-flex
-              align-items-center
-              justify-content-start justify-content-lg-center
-            ">
-                    <img src="img/White logo - no background.svg" alt="SJ Wonder Logo" height="65" />
+                  col
+                  d-flex
+                  align-items-center
+                  justify-content-start justify-content-lg-center
+                ">
+                    <img src="/img/White logo - no background.svg" alt="SJ Wonder Logo" height="65" />
                 </div>
                 <!--using font awesome for social media icons-->
-                <div class="col d-flex align-items-center
-              justify-content-start justify-content-lg-end">
+                <div class="
+                  col
+                  d-flex
+                  align-items-center
+                  justify-content-start justify-content-lg-end
+                ">
                     <div class="row">
-                        <div class="col">
-                            <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+                        <div class="col social">
+                            <a href="#"><i class="fab fa-linkedin fa-2x "></i></a>
                         </div>
                         <div class="col social">
-                            <a href="https://github.com/ShellyWonder"><i class="fab fa-github fa-2x"></i></a>
-                        </div>
-                        <div class="col">
-                            <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+                            <a href="https://github.com/ShellyWonder" target="_blank"><i
+                                    class="fab fa-github fa-2x "></i></a>
                         </div>
                     </div>
                 </div>
@@ -238,6 +243,7 @@
             <td data-id="principal"></td>
             <td data-id="interest"></td>
             <td data-id="totalInterest"></td>
+            <td data-id="balance"></td>
         </tr>
     </template>
     <!-- Bootstrap JS -->

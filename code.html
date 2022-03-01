@@ -2,7 +2,8 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>APP NAME: A Coding Project by SJ Wonder</title>
+    <!--PLACEHOLDER TEXT (CHANGE)-->
+    <title>WHAT'S MY PAYMENT?: A Coding Project by SJ Wonder</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -14,9 +15,7 @@
     <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
     <link href="css/site.css" rel="stylesheet" />
     <link rel="icon" type="img/png" href="img/favicon/favicon-32x32.png" />
-    <link href="/css/prism.css" rel="stylesheet" />
     <!--add ADOBE FONTS LINK HERE-->
-    <link rel="stylesheet" href="https://use.typekit.net/liw5mjc.css">
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -24,8 +23,7 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand logoFont" href="#"><img src="img/logoMarkWhite.png" class="p-1" width="30"
-                    height="39" />
-                APP NAME</a>
+                    height="39" />WHAT'S MY PAYMENT?</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -42,10 +40,11 @@
                         <a class="nav-link active" aria-current="page" href="/code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="https://github.com/ShellyWonder">Git Repo</a>
+                        <a class="nav-link" target="_blank" href="https://github.com/ShellyWonder/loan_calc2022">Git
+                            Repo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="/contact.html">Contact</a>
+                        <a class="nav-link" target="_blank" href="http://www.wonderwebdev.com/#contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -54,7 +53,7 @@
     <!--Main section-->
     <main class="flex-shrink-0">
         <div class="container py-5 px-5 mt-5">
-            <h2 class="border-1 border-bottom border-dark">The Code for <span class="logoFont">.JS FIZZ BUZZ</span></h2>
+            <h2 class="border-1 border-bottom border-dark">The Code for <span class="logoFont">WHAT'S MY PAYMENT?</span></h2>
             <div class="row row-cols-1 row-cols-lg-2">
                 <!--CODE EMBED-->
                 <div class="col-lg-8">
@@ -62,99 +61,9 @@
             <code class="language-javascript">
                 <!--PLACEHOLD CONTENT CHANGE-->
                 
-              //get values from the DOM: fizzValue & buzzValue;
-function getValues() {
-  let fizzValue = document.getElementById("fizzValue").value;
-  let buzzValue = document.getElementById("buzzValue").value;
+              
+ 
 
-  //VALIDATION:
-  //Parse for numbers
-  fizzValue = parseInt(fizzValue);
-  buzzValue = parseInt(buzzValue);
-  // convert strings to integers;
-  if (Number.isInteger(fizzValue) && Number.isInteger(buzzValue)) {
-    /*LOGIC: CALL fizzBuzz--replace fizzBuzzA with 
-    alternative functions fizzBuzzB &fizzBuzzC 
-    HERE to test them*/
-    let fbArray = fizzBuzzA(fizzValue, buzzValue);
-    //CALL displayData & write values to the screen;
-    displayData(fbArray);
-  } else {
-    alert("You must enter an integer.");
-  }
-
-  }
-  //DISPLAY:DO FIZZBUZZ
-//alternate solution A:
-function fizzBuzzA(fizzValue, buzzValue) {
-  let returnArray = [];
-  //loop 1-100
-  for (let i = 1; i <= 100; i++) {
-    //Replace the number feature:
-    //number / fizzValue && number / buzzValue =FizzBuzz
-    if (i % fizzValue == 0 && i % buzzValue == 0) {
-      returnArray.push("FizzBuzz");
-    } else if (i % fizzValue == 0) {
-      // number / fizzValue = Fizz;
-      returnArray.push("Fizz");
-    } else if (i % buzzValue == 0) {
-      //number / buzzValue = Buzz;
-      returnArray.push("Buzz");
-    } else {
-      /*IF none of the above conditions apply to 
-      the number(i), push (i) into returnArray;*/
-      returnArray.push(i);
-    }
-  }
-
-  return returnArray;
-}
-/*alternate solution B: using a SWITCH statement; 
-to test, chng function called 
-on line 13 to fizzBuzzB*/
-function fizzBuzzB(fizzValue, buzzValue) {
-  let returnArray = [];
-  //declaring the booleans:
-  let Fizz = false;
-  let Buzz = false;
-  for (let i = 1; i<= 100; i++) {
-    Fizz = i % fizzValue === 0;
-    Buzz = i % buzzValue === 0;
-
-    switch (true) {
-      case Fizz && Buzz: {
-        returnArray.push("FizzBuzz");
-        break;
-      }
-      case Fizz: {
-        returnArray.push("Fizz");
-        break;
-      }
-      case Buzz: {
-        returnArray.push("Buzz");
-        break;
-      }
-      default: {
-        returnArray.push(i);
-        break;
-      }
-    }
-  }
-  return returnArray;
-}
-/*alternate solution C: using a ternary operator
-(most compact--one line); to test, 
-chng function called on line 13 to fizzBuzzC*/
-function fizzBuzzC(fizzValue, buzzValue) {
-  let returnArray = [];
-  for (let i = 1; i <= 100; i++) {
-    let value =
-      (i % fizzValue == 0 ? "Fizz" : "") +
-      (i % buzzValue == 0 ? "Buzz" : "") || i);
-    returnArray.push(value);
-  }
-  return returnArray;
-}
 /*loop over the array and create a tablerow for each item. (inserted into td's)*/
 function displayData(fbArray) {
   //get tbody element from DOM
@@ -311,34 +220,32 @@ function displayData(fbArray) {
             <div class="row row-cols-1 row-cols-lg-3 gy-2">
                 <div class="col order-last order-lg-first text-light">
                     <div>
-                        <span class="text-muted">&copy;2021</span>&nbsp;SJ Wonder |
+                        <span class="text-muted">&copy;2022</span>&nbsp;SJ Wonder |
                         <a href="mailto:shelly@wonderwebdev.com"> shelly@wonderwebdev.com</a>
                     </div>
                 </div>
                 <div class="
-              col
-              d-flex
-              align-items-center
-              justify-content-start justify-content-lg-center
-            ">
-                    <img src="img/White logo - no background.svg" alt="SJ Wonder Logo" height="65" />
+                  col
+                  d-flex
+                  align-items-center
+                  justify-content-start justify-content-lg-center
+                ">
+                    <img src="/img/White logo - no background.svg" alt="SJ Wonder Logo" height="65" />
                 </div>
                 <!--using font awesome for social media icons-->
                 <div class="
-              col
-              d-flex
-              align-items-center
-              justify-content-start justify-content-lg-end
-            ">
+                  col
+                  d-flex
+                  align-items-center
+                  justify-content-start justify-content-lg-end
+                ">
                     <div class="row">
                         <div class="col social">
-                            <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+                            <a href="#"><i class="fab fa-linkedin fa-2x "></i></a>
                         </div>
                         <div class="col social">
-                            <a href="https://github.com/ShellyWonder"><i class="fab fa-github fa-2x"></i></a>
-                        </div>
-                        <div class="col social">
-                            <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+                            <a href="https://github.com/ShellyWonder" target="_blank"><i
+                                    class="fab fa-github fa-2x "></i></a>
                         </div>
                     </div>
                 </div>
