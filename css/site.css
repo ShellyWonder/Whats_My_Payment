@@ -1,8 +1,9 @@
 :root {
-  --sjw-dark-color: #092601;
+  --sjw-dark-color: #154001;
   --sjw-light-color: #eee;
   --sjw-primary-color: #001e43;
   --sjw-secondary-color: #ff993b;
+  --sjw-lightbg-color: #a5bf6b;
 }
 
 /*change logoFont with each project*/
@@ -34,8 +35,8 @@ h6 {
 }
 
 /*Navbar styles*/
-.navbarBG {
-  background-color: var(--sjw-dark-color);
+.navbar-dark {
+  background-color: var(--sjw-dark-color) !important;
 }
 
 .jsicon {
@@ -58,7 +59,7 @@ h6 {
   color: var(--sjw-secondary-color);
 }
 .table-striped {
-  background-color: #a5bf6b;
+  background-color: var(--sjw-lightbg-color);
 }
 
 /*--button styles override Bootstrap styles--*/
@@ -68,12 +69,12 @@ h6 {
 }
 
 /* form background override bootstrap: added opacity 25%*/
-.bg-secondary {
-  --bs-bg-opacity: 0.25;
-  background-color: rgba(
-    var(--bs-secondary-rgb),
-    var(--bs-bg-opacity)
-  ) !important;
+form {
+  background-color: #a5bf6b;
+  opacity: 0.75;
+}
+form:hover {
+  border: 3px solid var(--sjw-secondary-color);
 }
 
 .btn-outline-primary:hover,
@@ -98,7 +99,7 @@ h6 {
 }
 
 thead {
-  background-color: var(--sjw-primary-color);
+  background-color: #1d5902;
   color: var(--sjw-light-color);
 }
 
@@ -111,7 +112,7 @@ thead {
 }
 
 .footer {
-  background-color: var(--sjw-dark-color);
+  background-color: var(--sjw-dark-color) !important;
   padding-right: 1rem;
   color: var(--sjw-light-color);
 }

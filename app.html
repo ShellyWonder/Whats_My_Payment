@@ -22,7 +22,7 @@
     <!--Nav section-->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand logoFont" href="#"><img src="img/logoMarkWhite.png" class="p-1" width="30"
+            <a class="navbar-brand logoFont" href="index.html"><img src="img/logoMarkWhite.png" class="p-1" width="30"
                     height="39" />WHAT'S MY PAYMENT?</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,123 +54,60 @@
     <main class="flex-shrink-0">
 
         <div class="container px-4 py-5 mt-5">
-            <div class="row">
+            <div class="row mt-3">
                 <h1>WHAT'S MY PAYMENT?</h1>
 
                 <!--COL 1 LOAN CALC-->
-                <div class="col-12 col-md-6 bg-secondary shadow-sm p-3 mb-5 bg-body rounded">
-                    <form id="userInputForm" class="pt-3 mb-3">
+                <div class="col  ">
+                    <form class="shadow-sm p-3 mb-5 rounded" >
                         <div class="form-group">
-                            <label for="loanAmt" class="form-label"> Loan Amount:</label>
-                            <input id="loanAmt" type="text" class="form-control" placeholder="" required>
+                            <label for="loanAmount" class="form-label"> Loan Amount:</label>
+                            <input id="loanAmount" type="number" value="15000" class="form-control" placeholder="Enter amount to borrow" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="numPayments" class="form-label">Payments</label>
-                            <select class="form-control" id="numPayments" required>
-                                <option value="">Select . . .</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
-                                <option value="14">14</option>
-                                <option value="15">15</option>
-                                <option value="16">16</option>
-                                <option value="17">17</option>
-                                <option value="18">18</option>
-                                <option value="19">19</option>
-                                <option value="20">20</option>
-                                <option value="21">21</option>
-                                <option value="22">22</option>
-                                <option value="23">23</option>
-                                <option value="24">24</option>
-                                <option value="25">25</option>
-                                <option value="26">26</option>
-                                <option value="27">27</option>
-                                <option value="28">28</option>
-                                <option value="29">29</option>
-                                <option value="30">30</option>
-                                <option value="31">31</option>
-                                <option value="32">32</option>
-                                <option value="33">33</option>
-                                <option value="34">34</option>
-                                <option value="35">35</option>
-                                <option value="36">36</option>
-                                <option value="37">37</option>
-                                <option value="38">38</option>
-                                <option value="39">39</option>
-                                <option value="40">40</option>
-                                <option value="41">41</option>
-                                <option value="42">42</option>
-                                <option value="43">43</option>
-                                <option value="44">44</option>
-                                <option value="45">45</option>
-                                <option value="46">46</option>
-                                <option value="47">47</option>
-                                <option value="48">48</option>
-                                <option value="49">49</option>
-                                <option value="50">50</option>
-                                <option value="51">51</option>
-                                <option value="52">52</option>
-                                <option value="53">53</option>
-                                <option value="54">54</option>
-                                <option value="55">55</option>
-                                <option value="56">56</option>
-                                <option value="57">57</option>
-                                <option value="58">58</option>
-                                <option value="59">59</option>
-                                <option value="60">60</option>
-
-                            </select>
+                            <label for="loanTerm">Payments:</label>
+                            <input id="loanTerm" class="form-control" type="number" value="60" placeholder="Enter an Amount">
                         </div>
                         <div class="form-group">
-                            <label for="interestRate" class="form-label">Interest Rate:</label>
-                            <input id="interestRate" type="text" class="form-control" required>
+                            <label for="loanRate">Rate:</label>
+                            <input id="loanRate" class="form-control" type="number" value="3" placeholder="Enter an Amount">
                         </div>
                         <div class="d-flex justify-content-end">
                             <button type="button" id="btnSubmit"
-                                class="btn btn-outline-primary text-dark mt-3">Calculate
+                                class="btn btn-outline-primary text-dark mt-3">Calculate Monthly
                                 Payment</button>
                         </div>
                     </form>
                 </div>
                 <!--  RIGHT COL 2---->
-                <div class="col-12 col-md-6">
-                    <div class="d-flex justify-content-end">
+                <div class="col">
+                    <div class="d-flex fluid justify-content-end">
                         <div>
-                            <h3><i>Your Monthly Payment</i></h3>
+                            <h3><i>My Monthly Payment</i></h3>
                         </div>
-                        <div class="d-flex justify-content-end mt-5">
+                        <div class=" col d-flex justify-content-end mt-5">
                             <div>
-                                <h4 id="displayPayment"></h4>
+                                <h4 id="payment">$000.00</h4>
                                 <!-- DISPLAY PAYMENT CALCULATION HERE-->
                             </div>
                         </div>
                     </div>
-                    <div class="row p-5">
-                        <div class="col-6">
+                    <div class="row p-5" row cols-md-2>
+                        <div class="col">
                             <div id= "userResults">
                             <p>Total Principal:</p>
                             <p>Total Interest:</p>
                             <p>Total Cost:</p>
                            </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col">
                             <div class="d-flex justify-content-end">
                                 <!--insert total results here-->
                                 <div id="results">
-                                    <p id="tPrincipal"></p>
-                                    <p id="tInterest"></p>
-                                    <p id="tCost"></p>
+                                    <p id="totalPrincipal">$0,000.00</p>
+                                    <p id="totalInterest">$0,000.00</p>
+                                    <p id="totalCost">$0,000.00</p>
                                 </div>
                             </div>
                         </div>
@@ -179,16 +116,16 @@
 
                 <!--  BOTTOM COL 3-->
                 <div class="col-12 mt-3">
-                    <table class="table table-striped table-hover" id="retData">
-                        <thead>
-                            <th>Month</th>
+                    <table class="table table-striped table-hover" >
+                        <thead class="tableheader">
+                            <th class="ps-5">Month</th>
                             <th>Payment</th>
                             <th>Principal</th>
                             <th>Interest</th>
                             <th>Total Interest</th>
                             <th>Balance</th>
                         </thead>
-                        <tbody id="retDataDisplay">
+                        <tbody id="scheduleBody">
 
                         </tbody>
                     </table>
@@ -197,13 +134,13 @@
         </div>
     </main>
     <!--footer section-->
-    <footer class="footer mt-auto py-3 bg-dark sticky-footer">
+    <footer class="footer  min-vw-100 mt-auto py-3 bg-dark sticky-footer">
         <div class="container-fluid">
             <div class="row row-cols-1 row-cols-lg-3 gy-2">
                 <div class="col order-last order-lg-first text-light">
                     <div>
                         <span class="text-muted">&copy;2022</span>&nbsp;SJ Wonder |
-                        <a href="mailto:shelly@wonderwebdev.com"> shelly@wonderwebdev.com</a>
+                        <a href="mailto:Shelly@wonderwebdev"> Shelly@wonderwebdev.com</a>
                     </div>
                 </div>
                 <div class="
@@ -212,7 +149,7 @@
                   align-items-center
                   justify-content-start justify-content-lg-center
                 ">
-                    <img src="/img/White logo - no background.svg" alt="SJ Wonder Logo" height="65" />
+                    <img src="img/White logo - no background.svg" alt="SJ Wonder Logo" height="65" />
                 </div>
                 <!--using font awesome for social media icons-->
                 <div class="
@@ -222,13 +159,14 @@
                   justify-content-start justify-content-lg-end
                 ">
                     <div class="row">
-                        <div class="col social">
-                            <a href="#"><i class="fab fa-linkedin fa-2x "></i></a>
+                        <div class="col">
+                            <a href="https://www.linkedin.com/in/shelly-wonder-153990233/"><i
+                                    class="fab fa-linkedin fa-2x"></i></a>
                         </div>
-                        <div class="col social">
-                            <a href="https://github.com/ShellyWonder" target="_blank"><i
-                                    class="fab fa-github fa-2x "></i></a>
+                        <div class="col">
+                            <a href="https://github.com/ShellyWonder"><i class="fab fa-github fa-2x"></i></a>
                         </div>
+    
                     </div>
                 </div>
             </div>
@@ -236,21 +174,22 @@
         </div>
     </footer>
     <!--TEMPLATE FOR DISPLAY TABLE-->
-    <template id="returnData-template">
+    <template id="schedule-Template">
         <tr>
-            <td data-id="month"></td>
-            <td data-id="payment"></td>
-            <td data-id="principal"></td>
-            <td data-id="interest"></td>
-            <td data-id="totalInterest"></td>
-            <td data-id="balance"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
         </tr>
+    </template>
     </template>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
     </script>
-    <script src="js/site.js"></script>
+    <script src="js/site2.js"></script>
     <script>
         document.getElementById("btnSubmit").addEventListener("click", getValues);
     </script>
