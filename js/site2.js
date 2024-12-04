@@ -119,6 +119,16 @@ function displayData(payments, amount, payment) {
         currency: "USD"
     });
 
+    showPrintButton();
+}
+
+function showPrintButton() {
+    let printSection = document.getElementById('printSection');
+    if (document.getElementById('scheduleBody').hasChildNodes()) {
+        printSection.classList.remove('d-none');
+    } else {
+        printSection.classList.add('d-none');
+    }
 }
 function updateCopyrightYear() {
     const currentYear = new Date().getFullYear();

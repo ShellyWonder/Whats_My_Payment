@@ -6,7 +6,7 @@
   --sjw-lightbg-color: #a5bf6b;
 }
 
-/*change logoFont with each project*/
+
 .logoFont {
   font-family: ltc-broadway-engraved, sans-serif;
   font-weight: 400;
@@ -98,7 +98,7 @@ form:hover {
   border-color: var(--sjw-secondary-color);
 }
 
-thead {
+.tableHeader {
   background-color: #1d5902;
   color: var(--sjw-light-color);
 }
@@ -126,3 +126,19 @@ footer .social > a:hover {
   color: var(--sjw-secondary-color);
   opacity: 0.9;
 }
+
+@media print {
+  .navbar, .footer, #btnSubmit {
+      display: none !important;
+  }
+  .container {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+  }
+  body {
+      padding: 0;
+      margin: 0;
+  }
+}
+
