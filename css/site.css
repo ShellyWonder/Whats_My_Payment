@@ -98,11 +98,6 @@ form:hover {
   border-color: var(--sjw-secondary-color);
 }
 
-.tableHeader {
-  background-color: #1d5902;
-  color: var(--sjw-light-color);
-}
-
 /*footer styles*/
 .sticky-footer {
   position: sticky;
