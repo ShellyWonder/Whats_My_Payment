@@ -11,6 +11,10 @@ function calcRate(rate) {
 }
 
 function getValues() {
+    // Hide the logo and show results when calculate button is clicked
+    document.getElementById("calculatorLogo").classList.add("d-none");
+    document.getElementById("paymentSection").classList.remove("d-none");
+
     let loanAmount = document.getElementById("loanAmount").value;
     let loanTerm = document.getElementById("loanTerm").value;
     let loanRate = document.getElementById("loanRate").value;
@@ -135,4 +139,45 @@ function updateCopyrightYear() {
     document.getElementById("copyrightYear").textContent = currentYear;
 }
 
-document.addEventListener('DOMContentLoaded', updateCopyrightYear);
+// Add these new functions at the bottom of site2.js
+function setupEventListeners() {
+    document.getElementById("btnSubmit").addEventListener("click", function() {
+        getValues();
+        toggleButtons();
+    });
+
+    document.getElementById("btnClear").addEventListener("click", clearCalculator);
+}
+
+function toggleButtons() {
+    document.getElementById("btnSubmit").classList.add("d-none");
+    document.getElementById("btnClear").classList.remove("d-none");
+}
+
+function clearCalculator() {
+    // Reset form values
+    document.getElementById("loanAmount").value = "";
+    document.getElementById("loanTerm").value = "";
+    document.getElementById("loanRate").value = "";
+    
+    // Hide results
+    document.getElementById("paymentSection").classList.add("d-none");
+    document.getElementById("printSection").classList.add("d-none");
+    
+    // Show calculator logo
+    document.getElementById("calculatorLogo").classList.remove("d-none");
+    
+    // Clear table
+    document.getElementById("scheduleBody").innerHTML = "";
+    
+    // Switch buttons back
+    document.getElementById("btnSubmit").classList.remove("d-none");
+    document.getElementById("btnClear").classList.add("d-none");
+}
+
+// Initialize event listeners when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    updateCopyrightYear();
+    setupEventListeners();
+});
+

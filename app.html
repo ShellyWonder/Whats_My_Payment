@@ -55,35 +55,36 @@
     <!--Main section-->
     <main class="flex-shrink-0">
 
-        <div class="container px-4 py-5 mt-5">
+        <div class="container-fluid center-block px-4 py-5 mt-5">
             <div class="row mt-3">
-                <h1>WHAT'S MY PAYMENT?</h1>
+                <h1>WHAT ARE MY LOAN TERMS?</h1>
 
                 <!--COL 1 LOAN CALC-->
                 <div class="col  ">
                     <form class="shadow-sm p-3 mb-5 rounded" >
                         <div class="form-group">
                             <label for="loanAmount" class="form-label"> Loan Amount:</label>
-                            <input id="loanAmount" type="number" value="15000" class="form-control" placeholder="Enter amount to borrow" required>
+                            <input id="loanAmount" type="number" value="" class="form-control" placeholder="Enter Loan Principal (eg 10,000)" required>
                         </div>
 
                         <div class="form-group">
                             <label for="loanTerm">Payments:</label>
-                            <input id="loanTerm" class="form-control" type="number" value="60" placeholder="Enter an Amount">
+                            <input id="loanTerm" class="form-control" type="number" value="" placeholder="Enter Term in Months(eg 60)" required>
                         </div>
                         <div class="form-group">
                             <label for="loanRate">Rate:</label>
-                            <input id="loanRate" class="form-control" type="number" value="3" placeholder="Enter an Amount">
+                            <input id="loanRate" class="form-control" type="number" value="" placeholder="Enter a percentage rate (number only eg 5)" required>
                         </div>
                         <div class="d-flex justify-content-end">
-                            <button type="button" id="btnSubmit"
-                                class="btn btn-outline-primary text-dark mt-3">Calculate Monthly
-                                Payment</button>
+                            <button type="button" id="btnSubmit" class="btn btn-outline-primary text-dark mt-3">Calculate Monthly Payment</button>
+                            <button type="button" id="btnClear" class="btn btn-outline-secondary text-dark mt-3 ms-2 d-none">Clear</button>
                         </div>
                     </form>
                 </div>
                 <!--  RIGHT COL 2---->
                 <div class="col">
+                    <img src="img/Loan Calculator 2 logo.jpg" id="calculatorLogo" class="img-fluid" alt="Loan Calculator Logo">
+                <div id="paymentSection" class="d-none">
                     <div class="d-flex fluid justify-content-end">
                         <div>
                             <h3><i>My Monthly Payment</i></h3>
@@ -95,21 +96,22 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row p-5" row cols-md-2>
-                        <div class="col">
-                            <div id= "userResults">
-                            <p>Total Principal:</p>
-                            <p>Total Interest:</p>
-                            <p>Total Cost:</p>
-                           </div>
-                        </div>
-                        <div class="col">
-                            <div class="d-flex justify-content-end">
-                                <!--insert total results here-->
-                                <div id="results">
-                                    <p id="totalPrincipal">$0,000.00</p>
-                                    <p id="totalInterest">$0,000.00</p>
-                                    <p id="totalCost">$0,000.00</p>
+                        <div class="row p-5" row cols-md-2>
+                            <div class="col">
+                                <div id= "userResults">
+                                <p>Total Principal:</p>
+                                <p>Total Interest:</p>
+                                <p>Total Cost:</p>
+                            </div>
+                            </div>
+                            <div class="col">
+                                <div class="d-flex justify-content-end">
+                                    <!--insert total results here-->
+                                    <div id="results">
+                                        <p id="totalPrincipal">$0,000.00</p>
+                                        <p id="totalInterest">$0,000.00</p>
+                                        <p id="totalCost">$0,000.00</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
