@@ -61,7 +61,6 @@ h6 {
 .table-striped {
   background-color: var(--sjw-lightbg-color);
 }
-
 /*--button styles override Bootstrap styles--*/
 .btn.outline-primary {
   color: var(--sjw-secondary-color);

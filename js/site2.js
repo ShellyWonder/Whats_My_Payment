@@ -9,33 +9,41 @@ function calcInterest(balance, rate) {
 function calcRate(rate) {
     return rate = rate / 1200;
 }
+  function getValues() {
+      let loanAmount = document.getElementById("loanAmount").value;
+      let loanTerm = document.getElementById("loanTerm").value;
+      let loanRate = document.getElementById("loanRate").value;
 
-function getValues() {
-    // Hide the logo and show results when calculate button is clicked
-    document.getElementById("calculatorLogo").classList.add("d-none");
-    document.getElementById("paymentSection").classList.remove("d-none");
+      // Convert to numbers for comparison
+      let numAmount = Number(loanAmount);
+      let numTerm = parseInt(loanTerm);
+      let numRate = parseFloat(loanRate);
 
-    let loanAmount = document.getElementById("loanAmount").value;
-    let loanTerm = document.getElementById("loanTerm").value;
-    let loanRate = document.getElementById("loanRate").value;
+      // Validation checks
+      if (!loanAmount || !loanTerm || !loanRate) {
+          alert("Please fill in all fields");
+          return;
+      }
 
+      // Check for negative values
+      if (numAmount <= 0 || numTerm <= 0 || numRate <= 0) {
+          alert("Please enter positive values only");
+          return;
+      }
 
-    loanAmount = Number(loanAmount);
-    loanTerm = parseInt(loanTerm);
+      // After all validations pass, proceed with UI changes and calculations
+      document.getElementById("calculatorLogo").classList.add("d-none");
+      document.getElementById("paymentSection").classList.remove("d-none");
+      document.getElementById("tableHeader").classList.remove("d-none");
 
-    loanRate = parseFloat(loanRate);
-    loanRate = calcRate(loanRate);
-
-    //calculate a payment
-    let payment = calcPayment(loanAmount, loanRate, loanTerm);
-
-    //return a list of payment objects
-    let payments = getPayments(loanAmount, loanRate, loanTerm, payment);
-
-    displayData(payments, loanAmount, payment);
-
-}
-
+      loanRate = calcRate(numRate);
+      let payment = calcPayment(numAmount, loanRate, numTerm);
+      let payments = getPayments(numAmount, loanRate, numTerm, payment);
+      displayData(payments, numAmount, payment);
+    
+      // Toggle buttons only after all calculations are successful
+      toggleButtons();
+    }
 function getPayments(amount, rate, term, payment) {
     let payments = [];
 
@@ -139,11 +147,11 @@ function updateCopyrightYear() {
     document.getElementById("copyrightYear").textContent = currentYear;
 }
 
-// Add these new functions at the bottom of site2.js
+
 function setupEventListeners() {
     document.getElementById("btnSubmit").addEventListener("click", function() {
         getValues();
-        toggleButtons();
+        
     });
 
     document.getElementById("btnClear").addEventListener("click", clearCalculator);
@@ -163,6 +171,7 @@ function clearCalculator() {
     // Hide results
     document.getElementById("paymentSection").classList.add("d-none");
     document.getElementById("printSection").classList.add("d-none");
+    document.getElementById("tableHeader").classList.add("d-none");
     
     // Show calculator logo
     document.getElementById("calculatorLogo").classList.remove("d-none");
