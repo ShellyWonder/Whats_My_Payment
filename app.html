@@ -85,11 +85,11 @@
       </div>
     </nav>
     <!--Main section-->
-    <main class="flex-shrink-0">
-      <div class="container-fluid center-block px-4 py-5 mt-5">
-        <div class="row mt-3">
-          <!--COL 1 LOAN CALC-->
-          <div class="col-lg-6 col-md-12">
+    <main class="flex-shrink-0" >
+      <div class="container px-4 py-5 mt-5">
+        <div class="row row-cols-1 row-cols-md-2 mt-3">
+          <!-- First column - Loan Calculator -->
+          <div class="col mb-4">
             <h1>WHAT ARE MY LOAN TERMS?</h1>
             <p>
               Input a principle loan amount and desired terms. A printable
@@ -153,13 +153,13 @@
               </div>
             </form>
           </div>
-          <!--  RIGHT COL 2---->
-          <div class="col-lg-6 col-md-12">
+          <!-- Second column - Calculator Logo/Payment Section -->
+          <div class="col">
             <img
               src="img/Loan Calculator 2 logo.jpg"
               id="calculatorLogo"
-              class="img-fluid"
-              alt="Loan Calculator Logo"
+              class="img-fluid center-block mx-auto d-none d-md-block"
+              alt="What's My Payment logo"
             />
             <div id="paymentSection" class="d-none">
               <div class="d-flex justify-content-end">
@@ -173,7 +173,7 @@
                   </div>
                 </div>
               </div>
-              <div class="row p-5" row cols-md-2>
+              <div class="row row-cols-md-1 p-5">
                 <div class="col">
                   <div id="userResults">
                     <p>Total Principal:</p>
@@ -195,33 +195,35 @@
             </div>
           </div>
 
-          <!--  BOTTOM COL 3-->
+          <!-- Bottom column - Table -->
           <div class="col-12 mt-3">
             <div id="printSection" class="d-none text-end mb-4">
               <button class="btn btn-outline-dark" onclick="window.print()">
                 <i class="bi bi-printer"></i> Print Schedule
               </button>
             </div>
-            <table
-              class="table table-responsive table-striped table-hover"
-              border="1"
-            >
-              <thead id="tableHeader" class="table-success d-none">
-                <th class="ps-5">Month</th>
-                <th>Payment</th>
-                <th>Principal</th>
-                <th>Interest</th>
-                <th>Total Interest</th>
-                <th>Balance</th>
-              </thead>
-              <tbody id="scheduleBody"></tbody>
-            </table>
+            <div class="container my-4">
+              <div class="table-responsive">
+                  <table class="table table-bordered table-striped table-hover">
+                    
+                    <thead id="tableHeader" class="table-success d-none">
+                      <th class="ps-5">Month</th>
+                      <th>Payment</th>
+                      <th>Principal</th>
+                      <th>Interest</th>
+                      <th>Total Interest</th>
+                      <th>Balance</th>
+                    </thead>
+                    <tbody id="scheduleBody"></tbody>
+                  </table>
+                </div>
+            </div>
           </div>
         </div>
       </div>
     </main>
     <!--footer section-->
-    <footer class="footer min-vw-100 mt-auto py-3 bg-dark sticky-footer">
+    <footer class="footer mt-auto py-3 bg-dark sticky-footer">
       <div class="container-fluid">
         <div class="row row-cols-1 row-cols-lg-3 gy-2">
           <div class="col order-last order-lg-first text-light">
