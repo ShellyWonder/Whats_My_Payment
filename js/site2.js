@@ -155,11 +155,26 @@ function setupEventListeners() {
     });
 
     document.getElementById("btnClear").addEventListener("click", clearCalculator);
+    //add event listener for enter key
+    document.addEventListener("keypress", handleEnterKey);
 }
 
 function toggleButtons() {
     document.getElementById("btnSubmit").classList.add("d-none");
     document.getElementById("btnClear").classList.remove("d-none");
+}
+
+function handleEnterKey(event) {
+    if (event.key === 'Enter') {
+        // If clear button is visible, trigger clear
+        if (!document.getElementById("btnClear").classList.contains("d-none")) {
+            clearCalculator();
+        }
+        // If submit button is visible, trigger calculation
+        else if (!document.getElementById("btnSubmit").classList.contains("d-none")) {
+            getValues();
+        }
+    }
 }
 
 function clearCalculator() {
