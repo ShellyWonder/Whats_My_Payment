@@ -69,7 +69,7 @@ A simple and intuitive calculator to help users estimate their monthly loan paym
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/whats-my-payment.git
+   git clone https://github.com/ShellyWonder/Whats_My_Payment.git
    ```
 2. Open the `index.html` file in your browser to start the application.
 
